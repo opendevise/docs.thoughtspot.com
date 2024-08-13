@@ -114,6 +114,10 @@
       "destination": "/software/latest/",
       "statusCode": 301 },
     {
+      "source": "/software/9.8.0.sw/",
+      "destination": "/software/latest/",
+      "statusCode": 301 },
+    {
       "source": "/software/9.5.0.sw",
       "destination": "/software/9.5.0.sw/",
       "statusCode": 301 },
