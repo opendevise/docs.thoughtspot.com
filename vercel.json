@@ -10,6 +10,10 @@
       "destination": "/cloud/latest/:path*",
       "statusCode": 301 },
     {
+      "source": "/cloud",
+      "destination": "/cloud/latest/",
+      "statusCode": 301 },
+    {
       "source": "/cloud/10.1.0.cl/",
       "destination": "/cloud/latest/",
       "statusCode": 301 },
