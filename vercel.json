@@ -14,6 +14,22 @@
       "destination": "/cloud/latest/",
       "statusCode": 301 },
     {
+      "source": "/software",
+      "destination": "/software/latest/",
+      "statusCode": 301 },
+    {
+      "source": "/mobile",
+      "destination": "/mobile/latest/",
+      "statusCode": 301 },
+    {
+      "source": "/seekwell",
+      "destination": "/seekwell/latest/",
+      "statusCode": 301 },
+    {
+      "source": "/spotter",
+      "destination": "/spotter/latest/",
+      "statusCode": 301 },
+    {
       "source": "/cloud/10.1.0.cl/",
       "destination": "/cloud/latest/",
       "statusCode": 301 },
