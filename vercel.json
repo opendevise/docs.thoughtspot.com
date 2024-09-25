@@ -122,7 +122,7 @@
       "destination": "/cloud/9.12.5.cl/connections-snowflake-add#additional-configurations-create",
       "statusCode": 301 },
     {
-      "source": "/6.1/complex-search/create-aggregated-worksheet",
+      "source": "https://docs.thoughtspot.com/6.1/complex-search/create-aggregated-worksheet",
       "destination": "/software/6.1/create-aggregated-worksheet",
       "statusCode": 301 },
     {
