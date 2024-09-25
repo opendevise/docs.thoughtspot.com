@@ -122,6 +122,10 @@
       "destination": "/cloud/9.12.5.cl/connections-snowflake-add#additional-configurations-create",
       "statusCode": 301 },
     {
+      "source": "/6.1/complex-search/create-aggregated-worksheet",
+      "destination": "/software/6.1/create-aggregated-worksheet",
+      "statusCode": 301 },
+    {
       "source": "/cloud/9.12.5.cl/table-join",
       "destination": "/cloud/9.12.5.cl/tables-join#_new_join_interface",
       "statusCode": 301 },
