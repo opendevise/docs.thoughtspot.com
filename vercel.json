@@ -288,6 +288,10 @@
       "destination": "https://help-software.vercel.app/software/10.0.0.sw/index_help",
       "statusCode": 200 },
     {
+      "source": "/ghyer95y3/software/10.1.0.sw",
+      "destination": "https://help-software.vercel.app/software/10.1.0.sw/index_help",
+      "statusCode": 200 },
+    {
       "source": "/ghyer95y3/software/10.5.0.sw",
       "destination": "https://help-cloud.vercel.app/software/10.5.0.sw/index_help",
       "statusCode": 200 },
