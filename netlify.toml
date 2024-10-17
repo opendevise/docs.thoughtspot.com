@@ -14,7 +14,7 @@ command = "node_modules/.bin/antora antora-playbook.yml --stacktrace --log-forma
 [headers.values]
   Content-Security-Policy = "default-src * 'unsafe-eval' 'unsafe-inline' data: filesystem: about: blob:;"
 
-# all redirects for site
+# all redirects for site - test
 
 # redirect for product connectivity check start
 
