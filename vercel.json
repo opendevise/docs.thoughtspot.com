@@ -30,6 +30,10 @@
       "destination": "/spotter/latest/",
       "statusCode": 301 },
     {
+      "source": "/spotter/latest",
+      "destination": "/spotter/latest/",
+      "statusCode": 301 },
+    {
       "source": "/cloud/10.3.0.cl/",
       "destination": "/cloud/latest/",
       "statusCode": 301 },
