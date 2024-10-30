@@ -22,6 +22,10 @@ content:
     # Mobile docs branches
     branches: [ '3.0.0.mb' ]
     start_path: mobile/
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+    # Spotter docs branch
+    branches: ['1.0.0.cp']
+    start_path: spotter/
   - url: git@github.com:thoughtspot/visual-embed-sdk.git
   # dev docs branches
     branches: ['7.1.1-sw-docs', '7.2-sw-docs']
