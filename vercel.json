@@ -38,11 +38,11 @@
       "destination": "/cloud/latest/",
       "statusCode": 301 },
     {
-      "source": "/cloud/10.3.0.cl/liveboard-schedules-homepage",
+      "source": "/cloud/latest/liveboard-schedules-homepage",
       "destination": "/cloud/latest/thoughtspot-homepage",
       "statusCode": 301 },
     {
-      "source": "/cloud/10.3.0.cl/notes#10-3-0-cl-developer",
+      "source": "/cloud/latest/notes#10-3-0-cl-developer",
       "destination": "https://developers.thoughtspot.com/docs/selective-user-access",
       "statusCode": 301 },
     {
