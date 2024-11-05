@@ -38,6 +38,14 @@
       "destination": "/cloud/latest/",
       "statusCode": 301 },
     {
+      "source": "/cloud/10.3.0.cl/liveboard-schedules-homepage",
+      "destination": "/cloud/latest/thoughtspot-homepage",
+      "statusCode": 301 },
+    {
+      "source": "/cloud/10.3.0.cl/notes#10-3-0-cl-developer",
+      "destination": "https://developers.thoughtspot.com/docs/selective-user-access",
+      "statusCode": 301 },
+    {
       "source": "/software/10.1.0.sw/table-join",
       "destination": "/software/10.1.0.sw/relationship-create#table-join-new",
       "statusCode": 301 },
