@@ -38,6 +38,10 @@
       "destination": "/cloud/latest/",
       "statusCode": 301 },
     {
+      "source": "cloud/latest/schedule-new-experience",
+      "destination": "cloud/latest/liveboard-schedule#_scheduling_a_liveboard",
+      "statusCode": 301 },
+    {
       "source": "/cloud/latest/liveboard-schedules-homepage",
       "destination": "/cloud/latest/thoughtspot-homepage",
       "statusCode": 301 },
