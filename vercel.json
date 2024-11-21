@@ -6,7 +6,7 @@
       "destination": "/software/latest/:path*",
       "statusCode": 301 },
     {
-      "source": "/cloud/10.3.0.cl/:path*",
+      "source": "/cloud/10.4.0.cl/:path*",
       "destination": "/cloud/latest/:path*",
       "statusCode": 301 },
     {
@@ -34,7 +34,7 @@
       "destination": "/spotter/latest/",
       "statusCode": 301 },
     {
-      "source": "/cloud/10.3.0.cl/",
+      "source": "/cloud/10.4.0.cl/",
       "destination": "/cloud/latest/",
       "statusCode": 301 },
     {
