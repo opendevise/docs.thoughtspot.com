@@ -58,6 +58,10 @@
       "destination": "/software/10.1.0.sw/connections-snowflake-add#additional-configurations-create",
       "statusCode": 301 },
     {
+      "source": "/cloud/10.3.0.cl",
+      "destination": "/cloud/10.3.0.cl/",
+      "statusCode": 301 },
+    {
       "source": "/cloud/10.1.0.cl",
       "destination": "/cloud/10.1.0.cl/",
       "statusCode": 301 },
