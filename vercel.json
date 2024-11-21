@@ -139,11 +139,11 @@
       "statusCode": 301 },
     {
       "source": "/cloud/latest/time-series-forecasting",
-      "destination": "/cloud/10.3.0.cl/spotiq-forecasting",
+      "destination": "/cloud/10.4.0.cl/spotiq-forecasting",
       "statusCode": 301 },
     {
       "source": "/cloud/latest/connection-config",
-      "destination": "/cloud/10.3.0.cl/connections-snowflake-add#additional-configurations-create",
+      "destination": "/cloud/10.4.0.cl/connections-snowflake-add#additional-configurations-create",
       "statusCode": 301 },
     {
       "source": "/cloud/9.12.5.cl/connection-config",
@@ -222,7 +222,7 @@
       "destination": "/software/latest/_images/blanknetworkconnect.png",
       "statusCode": 301 },
     {
-      "source": "/cloud/10.3.0.cl/notes",
+      "source": "/cloud/10.4.0.cl/notes",
       "destination": "/cloud/latest/notes",
       "statusCode": 301 },
     {
