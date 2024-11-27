@@ -10,13 +10,13 @@ const outputFolder = 'embed-snippets'
 
 console.log(`folder: ${folder}, basePath: ${basePath}, outputPath: ${outputPath}`)
 
-const docsBaseUrl = 'https://docs.thoughtspot.com/latest'
+const docsBaseUrl = 'https://docs.thoughtspot.com/'
 
 const embedTemplate = `
 <!DOCTYPE html>
 <html>
 	<head>
-		<link rel="stylesheet" href="https://docs-thoughtspot-com.netlify.app/_/css/vendor/snippet.css" />
+		<link rel="stylesheet" href="https://docs.thoughtspot.com/_/css/vendor/snippet.css" />
 		<title>$title</title>
 	</head>
 	<body>

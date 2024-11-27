@@ -1,8 +1,429 @@
 [build.environment]
 CI = "true"
-NODE_VERSION = "10"
-# WARNING netlify-build ignores NPM_FLAGS when installing plugins, so use low-level NPM_CONFIG_ flag instead
-#NPM_FLAGS = "--no-optional"
+NODE_VERSION = "16"
+NODE_OPTIONS= "--max-old-space-size=8096"
 NPM_CONFIG_OPTIONAL = "false"
 ANTORA_CACHE_DIR = "node_modules/.cache/antora"
-NODE_OPTIONS = "--max-old-space-size=4096"
+
+[build]
+command = "node_modules/.bin/antora antora-playbook.yml --stacktrace --log-format=pretty"
+
+# security policies
+[[headers]]
+  for = "/*"
+[headers.values]
+  Content-Security-Policy = "default-src * 'unsafe-eval' 'unsafe-inline' data: filesystem: about: blob:;"
+
+# all redirects for site - test
+
+# redirect for product connectivity check start
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/blanknetworkconnect.png"
+  to = "https://docs.thoughtspot.com/software/latest/_images/blanknetworkconnect.png"
+  status = 301
+  force = true
+
+# redirect any netlify address url to real address
+# redirect for home of sw and cloud docs
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/8.8.1.sw.cu2?pendo=1"
+  to = "https://docs.thoughtspot.com/ghyer95y3/software/8.8.1.sw?pendo=1"
+  status = 301
+  force = true # COMMENT: global redirect for 9.7.0.cl old doc site url to latest cloud
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/cloud/9.12.5.cl/notes.html"
+  to = "https://docs.thoughtspot.com/cloud/latest/notes"
+  status = 301
+  force = true # COMMENT: redirect 9.10.5.cl release notes to 9.10.0.cl until prod cluster upgradeds
+
+# For Gilead redirects from old cloud-docs url, checkout the thoughtspot.github.io repo check out the ts8.nov.cl branch and add/update the redirects in the netlify.toml file, then merge them and make sure the cloud-docs.thoughtspo.tcom site in Netlify re-deploys.
+
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/8.4.1.sw.cu1/release/help-center"
+  to = "https://docs.thoughtspot.com/software/8.4.1.sw/help-center"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
+
+# rewrite to publish older hidden doc version for Candian Tire - begin
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/cloud/9.3.0.cl/*"
+  to = "https://9-3-0-cl-docs-archive.netlify.app/cloud/9.3.0.cl/:splat"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/9.3.0.cl/release/help-center"
+  to = "https://docs.thoughtspot.com/cloud/9.3.0.cl/help-center"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
+
+# rewrite to publish older hidden doc version - end
+
+# rewrite to publish gartner at hidden doc version - begin
+
+[[redirects]]
+from = "https://docs.thoughtspot.com/cloud/9.9.0.cl/*"
+to = "https://ts-9-9-0-cl.netlify.app/cloud/9.9.0.cl/:splat"
+status = 200
+force = true # COMMENT: ensure that we always redirect
+
+# rewrite to publish gartner at hidden doc version - end
+
+# rewrites for help - start
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/software/8.8.1.sw.cu1/*"
+  to = "https://docs.thoughtspot.com/software/8.8.1.sw/:splat"
+  status = 301
+  force = true # COMMENT: global redirect for 8.8.1.sw.cu1 to sw 8.8.1.sw
+
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/8.8.1.sw.cu1/"
+  to = "https://docs.thoughtspot.com/ghyer95y3/software/8.8.1.sw/"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/8.4.1.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/8.4.1.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/8.4.1.sw.cu1/"
+  to = "https://help-software-thoughtspot.netlify.app/software/8.4.1.sw/"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/8.8.1.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/8.8.1.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/9.0.0.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/9.0.0.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/9.0.1.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/9.0.1.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/9.5.0.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/9.5.0.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/9.5.1.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/9.5.1.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/9.8.0.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/9.8.0.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/9.11.0.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/9.11.0.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/10.0.0.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/10.0.0.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/10.0.1.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/10.0.1.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/10.5.0.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/10.5.0.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/10.5.1.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/10.5.1.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/10.11.0.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/10.11.0.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/11.0.1.sw/"
+  to = "https://help-software-thoughtspot.netlify.app/software/11.0.1.sw/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/10.3.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/10.3.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/10.2.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/10.2.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/10.1.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/10.1.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/10.0.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/10.0.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.12.5.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.12.5.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.12.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.12.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.10.5.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.10.5.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.10.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.10.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.9.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.9.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.8.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.8.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.7.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.7.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.6.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.6.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.5.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.4.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.4.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.4.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.3.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.3.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.2.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.2.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.1.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.1.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/9.0.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/9.0.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/8.10.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/8.10.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/8.9.0.cl/"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/8.9.0.cl/index_help"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+# Algolia pendo search test rewrite for cloud
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/cloud/*"
+  to = "https://help-cloud-thoughtspot.netlify.app/cloud/:splat"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+# Algolia pendo search test rewrite for cloud
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/software/*"
+  to = "https://help-software-thoughtspot.netlify.app/software/:splat"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+# Algolia pendo search test rewrite for cloud
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/sitemap-cloud.xml"
+  to = "https://help-cloud-thoughtspot.netlify.app/sitemap-cloud.xml"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+# Algolia pendo search test rewrite for sitemaps cloud
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/ghyer95y3/sitemap-software.xml"
+  to = "https://help-software-thoughtspot.netlify.app/sitemap-software.xml"
+  status = 200
+  force = true # COMMENT: ensure that we always redirect
+
+# Algolia pendo search test rewrite for sitemaps software
+
+# rewrites for help - end
+
+# confirmation email redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/software/latest/welcome-intro.html"
+  to = "https://docs.thoughtspot.com/software/latest/deployment-sw"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
+
+# redirect for EA custom sorting in 9.8.0.cl
+
+# [[redirects]]
+# from = "https://docs.thoughtspot.com/cloud/9.8.0.cl/customSorting"
+# to = "https://docs.thoughtspot.com/cloud/latest/worksheet-create"
+# status = 301
+# force = true # COMMENT: ensure that we always redirect
+
+# site-wide redirects
+
+# 8.10.0.cl uprade page to 8.9.0.cl (until customer cluster upgrade)
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/cloud/8.10.0.cl/upgrade"
+  to = "https://docs.thoughtspot.com/cloud/latest/upgrade"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/software/8.8.0.sw/*"
+  to = "https://la-docs.thoughtspot.com/software/8.8.0.sw/:splat"
+  status = 301
+  force = true # COMMENT: global redirect for 8.8.0.sw to LA docs site
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/software/9.8.0.sw/*"
+  to = "https://docs.thoughtspot.com/software/latest/:splat"
+  status = 301
+  force = true # COMMENT: global redirect for 9.8.0.sw to sw latest
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/software/9.5.0.sw.cu1/*"
+  to = "https://docs.thoughtspot.com/software/latest/:splat"
+  status = 301
+  force = true # COMMENT: global redirect for 9.5.0.sw.cu1 to sw latest
+
+[[redirects]]
+   from = "https://docs.thoughtspot.com/software/9.0.1.sw.cu1/*"
+   to = "https://docs.thoughtspot.com/software/9.0.1.sw/:splat"
+   status = 301
+   force = true # COMMENT: global redirect for 9.0.1.sw.cu1 to sw 9.0.1.sw
+
+[[redirects]]
+   from = "https://docs.thoughtspot.com/software/8.8.1.sw.cu1/*"
+   to = "https://docs.thoughtspot.com/software/8.8.1.sw/:splat"
+   status = 301
+   force = true # COMMENT: global redirect for 8.8.1.sw.cu1 to sw 8.8.1.sw
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/software/8.8.1.sw.CU1/*"
+  to = "https://docs.thoughtspot.com/software/8.8.1.sw/:splat"
+  status = 301
+  force = true # COMMENT: global redirect for 8.8.1.sw.CU1 to sw 8.8.1.sw
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/software/8.4.1.sw.cu1/*"
+  to = "https://docs.thoughtspot.com/software/8.4.1.sw/:splat"
+  status = 301
+  force = true # COMMENT: global redirect for 8.4.1.sw.cu1 to sw 8.4.1.sw
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/software/8.4.1.sw.CU1/*"
+  to = "https://docs.thoughtspot.com/software/8.4.1.sw/:splat"
+  status = 301
+  force = true # COMMENT: global redirect for 8.4.1.sw.CU1 to sw 8.4.1.sw
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/cloud/9.10.5.cl/*"
+  to = "https://docs.thoughtspot.com/cloud/latest/:splat"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/cloud/9.12.5.cl/*"
+  to = "https://docs.thoughtspot.com/cloud/latest/:splat"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
+
+[[redirects]]
+  from = "https://docs.thoughtspot.com/cloud/9.7.0.cl/*"
+  to = "https://docs.thoughtspot.com/cloud/latest/:splat"
+  status = 301
+  force = true # COMMENT: ensure that we always redirect
+

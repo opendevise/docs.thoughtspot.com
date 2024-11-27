@@ -1,7 +1,9 @@
 site:
-  title: ThoughtSpot Software Documentation
-  url: https://docs-thoughtspot-com.netlify.app/software
+  title: ThoughtSpot Documentation
+  url: https://docs.thoughtspot.com
   start_page: home::index.adoc
+  keys:
+    google_analytics: UA-44946579-2
 content:
   sources:
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
@@ -9,8 +11,29 @@ content:
     branches: HEAD
     start_path: home
   - url: git@github.com:thoughtspot/thoughtspot-docs.git
-    branches: ['6.0', '6.1', '6.2', '6.3']
+  # Software docs branches
+    branches: ['6.0', '6.1', '6.2', '6.3', '7.0', '7.1', '7.2', '8.4.1.sw', '8.8.1.sw', '9.0.1.sw', '9.5.0.sw', '9.8.0.sw']
     start_path: software/
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+  # Cloud docs branches
+    branches: ['10.0.0.cl', '10.1.0.cl', '10.3.0.cl', '10.4.0.cl']
+    start_path: cloud/
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+    # Mobile docs branches
+    branches: [ '3.0.0.mb']
+    start_path: mobile/
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+    # Spotter docs branch
+    branches: ['1.0.0.cp']
+    start_path: spotter/
+  - url: git@github.com:thoughtspot/visual-embed-sdk.git
+  # dev docs branches
+    branches: ['7.1.1-sw-docs', '7.2-sw-docs']
+    start_path: docs/software
+  - url: git@github.com:thoughtspot/thoughtspot-docs.git
+    # Seekwell docs branches
+    branches: ['seekwell']
+    start_path: seekwell/
 urls:
   latest_version_segment_strategy: redirect:to
   latest_version_segment: latest
@@ -25,15 +48,20 @@ ui:
     snapshot: true
 asciidoc:
   attributes:
-    software: true
-    cloud: false
+    #software: true
+    #cloud: false
+    page-company: ThoughtSpot
     tabs: tabs
+    support-url: https://community.thoughtspot.com/customers/s/contactsupport[ThoughtSpot Support^]
+    seekwell: SeekWell
+    latest: 10.1.0.cl
+    cl-subscription-agreement: https://www.thoughtspot.com/legal/thoughtspot-cloud-subscription-agreement[subscription agreement^]
   extensions:
-    - "@djencks/asciidoctor-tabset-block"
+  - '@asciidoctor/tabs'
 output:
   clean: true
-  dir: build/software
+  dir: build/
 runtime:
   fetch: true
   log:
-    level: error 
+    level: error
